@@ -34,9 +34,9 @@ export default function Catalogue(){
                 </div>
                 <div className="my-10">
                     <p className="font-bold text-center mb-5">Category</p>
-                    {categories.map((category, idx) =>
+                    {categories.map((category, idx) => 
                         <div key={idx}>
-                            <input type="checkbox" name={"check"+idx} className="mx-2"></input>
+                            <input type="checkbox" name={"check"+idx} className="mx-2" checked></input>
                             <label for={"check"+idx}>{category}</label>
                         </div>
                     )}
