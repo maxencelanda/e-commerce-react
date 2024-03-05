@@ -3,6 +3,7 @@ import reactSVG from '../assets/react.svg'
 
 import getProducts from "../API";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Catalogue(){
 
@@ -29,8 +30,8 @@ export default function Catalogue(){
                 </div>
             </div>
             <div className="col-span-2 grid grid-cols-3">
-                {productArray.map((product) =>
-                    product
+                {productArray.map((product, idx) =>
+                    <Link key={idx} to={`/catalogue/${idx}`}>{product}</Link>
                 )}
             </div>
         </div>

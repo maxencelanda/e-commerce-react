@@ -11,6 +11,7 @@ import Home from './components/Home.jsx'
 import Catalogue from './components/Catalogue.jsx'
 import PageLayout from './components/PageLayout.jsx'
 import AboutUs from './components/AboutUs.jsx'
+import ProductDetails from './components/ProductDetails.jsx'
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
     {
       path: "/catalogue",
       element: <Catalogue/>,
+    },
+    {
+      path: "/catalogue/:productId",
+      element: <ProductDetails/>,
     },
     {
       path: "/aboutus",
