@@ -12,14 +12,6 @@ import Catalogue from './components/Catalogue.jsx'
 import PageLayout from './components/PageLayout.jsx'
 import AboutUs from './components/AboutUs.jsx'
 
-/*
-async function getProducts(){
-  const response = await fetch('https://fakestoreapi.com/products');
-  const data = await response.json();
-  return data;
-}
-*/
-
 const router = createBrowserRouter([
   {
     element: <PageLayout/>,
