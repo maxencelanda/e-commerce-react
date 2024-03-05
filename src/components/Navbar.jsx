@@ -6,10 +6,10 @@ import avatarImg from "../assets/avatar.png";
 export default function Navbar(){
     return (
         <nav className="grid grid-cols-3">
-            <div className="col-start-2 center mx-auto grid grid-cols-3 w-full text-center bg-white border-x border-b border-black border-l mb-12">
-                <Link to='/'>Home</Link>
-                <Link to="/catalogue">Catalogue</Link>
-                <Link to="/aboutus">About us</Link>
+            <div className="col-start-2 center justify-content space-x-4 flex w-full text-center bg-white border-x border-b border-black border-l mb-12">
+                <Link to='/' className="flex-1">Home</Link>
+                <Link to="/catalogue" className="flex-1">Catalogue</Link>
+                <Link to="/aboutus" className="flex-1">About us</Link>
             </div>
             <div className="flex flex-row-reverse">
                 <Link to='/'><img src={cartImg} className="w-3/5"></img></Link>
