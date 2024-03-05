@@ -1,9 +1,8 @@
 import axios from "axios"
 
-const getProducts = () => {
-    const axiosGet = axios.get("https://fakestoreapi.com/products").then((response) => {
-        return response;
-    })
+const getProducts = async () => {
+    const axiosGet = await axios.get("https://fakestoreapi.com/products")
+    return axiosGet
 }
 
 export default getProducts

@@ -2,7 +2,7 @@ import starFilled from "../assets/etoile_fill.png"
 import starHalf from "../assets/etoile_half.png"
 import starEmpty from "../assets/etoile_empty.png"
 
-export default function ProductCard({ image, title, price, description, stars }) {
+export default function ProductCard({ image, title, category, price, description, stars }) {
 
     const starsArray = [];
     for (let i = 0; i < Math.floor(stars); i++){
