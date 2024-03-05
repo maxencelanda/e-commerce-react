@@ -6,10 +6,7 @@ Design en commun avec Anjara
 
 # Documentations & tutos
 
-React: https://react.dev/reference/react
-
-Routes: https://www.youtube.com/watch?v=oTIJunBa6MA&t
-
-Tailwind: https://tailwindcss.com/
-
+React: https://react.dev/reference/react \n
+Routes: https://www.youtube.com/watch?v=oTIJunBa6MA&t \n
+Tailwind: https://tailwindcss.com/ \n
 Tailwind CSS with React: https://tailwindcss.com/docs/gdes/create-react-app
