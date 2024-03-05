@@ -11,7 +11,7 @@ export default function Navbar(){
                 <Link to="/catalogue" className="flex-1">Catalogue</Link>
                 <Link to="/aboutus" className="flex-1">About us</Link>
             </div>
-            <div className="flex flex-row-reverse">
+            <div className="flex flex-row-reverse mr-64 gap-8">
                 <Link to='/'><img src={cartImg} className="w-3/5"></img></Link>
                 <Link to='/'><img src={avatarImg} className="w-1/2"></img></Link>
             </div>
