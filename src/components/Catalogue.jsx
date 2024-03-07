@@ -7,9 +7,9 @@ import { Link } from "react-router-dom";
 export default function Catalogue(){
 
     const [productArray, setProductArray] = useState([])
-    const [searchInput, setSearchInput] = useState("")
+    //const [searchInput, setSearchInput] = useState("")
     const [categories, setCategories] = useState([])
-    const [selectedCategories, setSelectedCategories] = useState([])
+    //const [selectedCategories, setSelectedCategories] = useState([])
 
     
 

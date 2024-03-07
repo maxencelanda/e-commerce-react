@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom"
 import getProducts from "../API"
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useState } from 'react'
 
 import { CartContext } from '../context/Cart'
 
@@ -9,7 +9,7 @@ export default function ProductDetails() {
   const productId = useParams().productId
   const [data, setData] = useState([])
 
-  const { cartItems, addToCart } = useContext(CartContext)
+  const { addToCart } = useContext(CartContext)
   
   getProducts().then((element) => {
     setData(element.data[productId])
