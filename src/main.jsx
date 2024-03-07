@@ -12,6 +12,8 @@ import Catalogue from './components/Catalogue.jsx'
 import PageLayout from './components/PageLayout.jsx'
 import AboutUs from './components/AboutUs.jsx'
 import ProductDetails from './components/ProductDetails.jsx'
+import { CartProvider } from './context/Cart.jsx'
+import Cart from './components/Cart.jsx'
 
 const router = createBrowserRouter([
   {
@@ -33,6 +35,10 @@ const router = createBrowserRouter([
       path: "/aboutus",
       element: <AboutUs/>,
     },
+    {
+      path: "/cart",
+      element: <Cart/>,
+    },
     ],
     
     errorElement: <Link to='/'><img src={bob} className='w-full h-full'></img></Link>,
@@ -41,6 +47,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <CartProvider>
+      <RouterProvider router={router}/>
+    </CartProvider>
   </React.StrictMode>,
 )

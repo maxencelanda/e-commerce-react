@@ -1,5 +1,4 @@
 import ProductCard from "./ProductCard";
-import reactSVG from '../assets/react.svg'
 
 import getProducts from "../API";
 import { useState } from "react";
@@ -11,6 +10,8 @@ export default function Catalogue(){
     const [searchInput, setSearchInput] = useState("")
     const [categories, setCategories] = useState([])
     const [selectedCategories, setSelectedCategories] = useState([])
+
+    
 
     getProducts().then((element) => {
         let product = []

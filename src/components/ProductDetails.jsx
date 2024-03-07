@@ -1,17 +1,19 @@
 import { Link, useParams } from "react-router-dom"
 import getProducts from "../API"
-import { useState } from "react"
+import { useContext, useEffect, useState } from 'react'
+
+import { CartContext } from '../context/Cart'
 
 export default function ProductDetails() {
 
   const productId = useParams().productId
-
   const [data, setData] = useState([])
+
+  const { cartItems, addToCart } = useContext(CartContext)
   
   getProducts().then((element) => {
     setData(element.data[productId])
   })
-  
 
   return (
     <div className="grid grid-cols-3">
@@ -24,7 +26,7 @@ export default function ProductDetails() {
       </div>
       <div className="border border-black w-4/5 mx-auto max-h-64">
         <p className="font-bold text-center text-2xl border-b py-5 w-10/12 mx-auto">{data.price}€</p>
-        <p className="text-center mt-10"><Link to="/" className="bg-blue-300 p-2 rounded-xl border border-black border-2">Ajouter au panier</Link></p>
+        <p className="text-center"><button onClick={() => addToCart(data)} className="text-center mt-10 bg-black text-white font-bold p-2 rounded-xl"><Link to="/cart">ADD TO CART</Link></button></p>
       </div>
     </div>
   )
