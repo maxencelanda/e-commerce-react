@@ -7,36 +7,29 @@ import { Link } from "react-router-dom";
 export default function Catalogue(){
 
     const [productArray, setProductArray] = useState([])
+    const [filteredProducts, setFilteredProducts] = useState([])
     const [categories, setCategories] = useState([])
     const [searchInput, setSearchInput] = useState("")
     //const [selectedCategories, setSelectedCategories] = useState([])
 
-    const refreshProducts = () => {
-        getProducts().then((element) => {
-            let product = []
-            let categs = []
-            element.data.map((data, idx) => {
-                product.push(<ProductCard key={idx} d={data}/>)
-                if (!(categs.includes(data.category))){
-                    categs.push(data.category)
-                }
-            })
-            setProductArray(product)
-            setCategories(categs)
+    getProducts().then((element) => {
+        let product = []
+        let categs = []
+        element.data.map((data, idx) => {
+            product.push(<ProductCard key={idx} d={data}/>)
+            if (!(categs.includes(data.category))){
+                categs.push(data.category)
+            }
         })
-    }
-    
-    refreshProducts()
+        setProductArray(product)
+        setCategories(categs)
+    })
 
     const searchProducts = (searchValue) => {
         setSearchInput(searchValue)
-        if (searchInput != "") {
-            setProductArray(productArray.filter((item) =>item.props.d.title.substr(0, searchInput.length).toLowerCase() == searchInput))
-            console.log(productArray)
-        } else {
-            setProductArray([])
-            setCategories([])
-            refreshProducts()
+        if (searchInput !== "") {
+            setFilteredProducts(productArray.filter((item) =>item.props.d.title.substr(0, searchInput.length).toLowerCase() == searchInput))
+            console.log(filteredProducts)
         }
     }
 
@@ -58,9 +51,15 @@ export default function Catalogue(){
                 </div>
             </div>
             <div className="col-span-2 grid grid-cols-3 mx-5">
-                {productArray.map((product, idx) =>
+                { 
+                searchInput === '' ? productArray.map((product, idx) =>
                     <Link key={idx} to={`/catalogue/${idx}`}>{product}</Link>
-                )}
+                )
+                :
+                filteredProducts.map((product, idx) =>
+                    <Link key={idx} to={`/catalogue/${idx}`}>{product}</Link>
+                )
+                }
             </div>
         </div>
     );
