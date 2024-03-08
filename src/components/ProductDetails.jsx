@@ -26,7 +26,7 @@ export default function ProductDetails() {
       </div>
       <div className="border border-black w-4/5 mx-auto max-h-64">
         <p className="font-bold text-center text-2xl border-b py-5 w-10/12 mx-auto">{data.price}€</p>
-        <p className="text-center"><button onClick={() => addToCart(data)} className="text-center mt-10 bg-black text-white font-bold p-2 rounded-xl"><Link to="/cart">ADD TO CART</Link></button></p>
+        <p className="text-center"><Link to="/cart"><button onClick={() => addToCart(data)} className="text-center mt-10 bg-black text-white font-bold p-2 rounded-xl">ADD TO CART</button></Link></p>
       </div>
     </div>
   )

@@ -4,12 +4,12 @@ import starEmpty from "../assets/etoile_empty.png"
 
 import getProducts from "../API"
 import { CartContext } from '../context/Cart'
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 export default function ProductCard({ d }) {
     
-
-    console.log(d)
+    const { addToCart } = useContext(CartContext)
 
     /* STARS */
     const starsArray = [];
@@ -42,6 +42,7 @@ export default function ProductCard({ d }) {
                 )}
                 <p className="ml-2">({d.rating.count})</p>
             </div>
+            <p className="text-center"><Link to="/cart"><button onClick={() => addToCart(d)} className="text-center mt-10 bg-black text-white font-semibold p-2 rounded-xl">ADD TO CART</button></Link></p>
         <p></p>
         </div>
     )

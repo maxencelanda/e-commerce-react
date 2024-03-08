@@ -16,7 +16,7 @@ export default function Cart() {
                         <img src={item.image} alt={item.title} className="rounded-md h-24" />
                         <div className="flex flex-col">
                             <h1 className="text-lg font-bold">{item.title}</h1>
-                            <p className="text-gray-600">{item.price}</p>
+                            <p className="text-gray-600">{item.price}€</p>
                         </div>
                         </div>
                         <div className="flex gap-4">
