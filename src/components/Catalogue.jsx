@@ -17,7 +17,7 @@ export default function Catalogue(){
         let product = []
         let categs = []
         element.data.map((data, idx) => {
-            product.push(<ProductCard key={idx} image={data.image} title={data.title} category={data.category} price={data.price} description={data.description} stars={data.rating.rate} count={data.rating.count}/>)
+            product.push(<ProductCard key={idx} d={data}/>)
             if (!(categs.includes(data.category))){
                 categs.push(data.category)
             }
