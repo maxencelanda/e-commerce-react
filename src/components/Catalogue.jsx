@@ -28,7 +28,7 @@ export default function Catalogue(){
     const searchProducts = (searchValue) => {
         setSearchInput(searchValue)
         if (searchInput !== "") {
-            setFilteredProducts(productArray.filter((item) =>item.props.d.title.substr(0, searchInput.length).toLowerCase() == searchInput))
+            setFilteredProducts(productArray.filter((item) => item.props.d.title.substr(0, searchInput.length).toLowerCase() == searchInput))
             console.log(filteredProducts)
         }
     }
