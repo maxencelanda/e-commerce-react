@@ -2,6 +2,8 @@
 
 ```npm install```
 
+```npm run dev```
+
 Design en commun avec Anjara
 
 # Documentations & tutos

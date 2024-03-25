@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom"
 import getProducts from "../API"
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 
 import { CartContext } from '../context/Cart'
 
@@ -11,9 +11,12 @@ export default function ProductDetails() {
 
   const { addToCart } = useContext(CartContext)
   
-  getProducts().then((element) => {
-    setData(element.data[productId])
+  useEffect(() => {
+    getProducts().then((element) => {
+      setData(element.data[productId])
+    })
   })
+  
 
   return (
     <div className="grid grid-cols-3">

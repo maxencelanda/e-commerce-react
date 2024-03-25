@@ -12,17 +12,19 @@ export default function Catalogue(){
     const [searchInput, setSearchInput] = useState("")
     //const [selectedCategories, setSelectedCategories] = useState([])
 
-    getProducts().then((element) => {
-        let product = []
-        let categs = []
-        element.data.map((data, idx) => {
-            product.push(<ProductCard key={idx} d={data}/>)
-            if (!(categs.includes(data.category))){
-                categs.push(data.category)
-            }
+    useEffect(() => {
+        getProducts().then((element) => {
+            let product = []
+            let categs = []
+            element.data.map((data, idx) => {
+                product.push(<ProductCard key={idx} d={data}/>)
+                if (!(categs.includes(data.category))){
+                    categs.push(data.category)
+                }
+            })
+            setProductArray(product)
+            setCategories(categs)
         })
-        setProductArray(product)
-        setCategories(categs)
     })
 
     const searchProducts = (searchValue) => {
